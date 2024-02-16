@@ -30,7 +30,7 @@ const createRoutine = async(req, res) => {
     const {title, exercises} = req.body
 
     if(!title){
-        return res.status(400).json({error: 'Please enter the title'})
+        return res.status(400).json({error: 'Please enter the title', title})
     }
 
     try{
