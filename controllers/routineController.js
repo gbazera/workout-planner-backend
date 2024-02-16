@@ -29,6 +29,10 @@ const getRoutine = async(req, res)=>{
 const createRoutine = async(req, res) => {
     const {title, exercises} = req.body
 
+    if(!title){
+        return res.status(400).json({error: 'Please enter the title'})
+    }
+
     try{
         const routine = await Routine.create({title, exercises})
         res.status(200).json(routine)
