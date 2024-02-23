@@ -42,7 +42,7 @@ const signupUser = async (req, res) => {
         const transport = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
-            secure: true,
+            secure: false,
             auth: {
                 user: process.env.EMAIL,
                 pass: process.env.EMAIL_PASSWORD
@@ -59,12 +59,8 @@ const signupUser = async (req, res) => {
         transport.sendMail(mailOptions, (err, info) => {
             if (err) {
                 console.error(err);
-            
-                res.status(500).json({ error: 'Failed to send verification email.' });
               } else {
                 console.log('Email sent:', info.response);
-            
-                res.status(200).json({ message: 'Verification email sent.' });
               }
         });
 
