@@ -12,6 +12,10 @@ const routineSchema = new Schema(
 			type: Array,
 			required: true,
 		},
+		user_id: {
+			type: String,
+			required: true,
+		}
 	},
 	{ timestamps: true }
 );
