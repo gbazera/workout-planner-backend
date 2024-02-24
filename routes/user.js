@@ -8,6 +8,4 @@ router.post('/login', loginUser)
 
 router.post('/signup', signupUser)
 
-router.get('/verify/:token', verifyUser)
-
 module.exports = router

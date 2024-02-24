@@ -14,14 +14,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    verified: {
-        type: Boolean,
-        default: false,
-    },
-    verificationToken: {
-        type: String,
-        default: '',
-    }
 })
 
 userSchema.statics.signup = async function(email, password){
