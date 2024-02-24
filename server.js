@@ -1,11 +1,17 @@
 require('dotenv').config()
 
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose')
 const routineRoutes = require('./routes/routines')
 const userRoutes = require('./routes/user')
 
 const app = express();
+
+app.use(cors({
+    origin: 'https://workout-planner-gb.netlify.app/',
+    credentials: true
+}))
 
 app.use(express.json())
 
